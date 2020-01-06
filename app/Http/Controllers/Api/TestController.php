@@ -103,8 +103,12 @@ class TestController extends Controller
 
     public function ascii()
     {
-        $enc="hello word";
+        $enc=$_GET['str'];
+
+
+        //$enc="hello word";
         echo "原密文：$enc";echo '</br>';
+        //echo print_r($_GET);echo '</br>';die;
         $length=strlen($enc);
         $pass="";
         for($i=0;$i<$length;$i++)
@@ -118,7 +122,8 @@ class TestController extends Controller
 
     public function dec()
     {
-        $enc="mjqqt%|twi";
+        $enc=$_GET['str'];
+        //$enc="mjqqt%|twi";
         echo "加密密文：$enc";echo '</br>';
         $length=strlen($enc);
         $pass="";
