@@ -101,16 +101,34 @@ class TestController extends Controller
 
 
 
-    // public function ascii()
-    // {
-    //     $enc="hello word";
-    //     echo "原密文：$enc";echo '</br>';
-    //     $length=strlen($enc);
-    //     $pass="";
-    //     for($i=0;$i<$length;$i++)
-    //     {
+    public function ascii()
+    {
+        $enc="hello word";
+        echo "原密文：$enc";echo '</br>';
+        $length=strlen($enc);
+        $pass="";
+        for($i=0;$i<$length;$i++)
+        {
+            $ord=ord($enc[$i])+5;
+            $chr=chr($ord);
+            $pass .=$chr;
+        }
+        echo "加密密文：$pass";
+    }
 
-    //     }
-    // }
+    public function dec()
+    {
+        $enc="mjqqt%|twi";
+        echo "加密密文：$enc";echo '</br>';
+        $length=strlen($enc);
+        $pass="";
+        for($i=0;$i<$length;$i++)
+        {
+            $ord=ord($enc[$i])-5;
+            $chr=chr($ord);
+            $pass .=$chr;
+        }
+        echo "解密密文：$pass";
+    }
 
 }
