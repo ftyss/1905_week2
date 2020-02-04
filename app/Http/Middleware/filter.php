@@ -27,10 +27,10 @@ class filter
                 ];
                 die(json_encode($response,JSON_UNESCAPED_UNICODE));
             }
-            //计数
-            Redis::incr($redis_key);
         }else{
             $response=[
+            //计数
+            Redis::incr($redis_key);
                 'errno'=>400002,
                 'msg'=>"未被授权",
             ];
